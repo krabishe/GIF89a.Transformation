@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{277A9546-F19D-4496-93EB-EAD4646109F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gif89a</RootNamespace>
+    <AssemblyName>Gif89a.Transformation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GifException.cs" />
+    <Compile Include="Color32.cs" />
+    <Compile Include="Components\ApplicationExtension.cs" />
+    <Compile Include="Components\CommentExtension.cs" />
+    <Compile Include="Components\Const.cs" />
+    <Compile Include="Components\ApplicationData.cs" />
+    <Compile Include="Components\ImageFrame.cs" />
+    <Compile Include="Components\Image.cs" />
+    <Compile Include="Components\GraphicControlExtension.cs" />
+    <Compile Include="Components\ImageDescriptor.cs" />
+    <Compile Include="Components\LogicalScreenDescriptor.cs" />
+    <Compile Include="Components\PlainTextExtension.cs" />
+    <Compile Include="Compression\BitEncoder.cs" />
+    <Compile Include="Compression\LzwDecoder.cs" />
+    <Compile Include="Compression\LzwEncoder.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="GifDecoder.cs" />
+    <Compile Include="GifEncoder.cs" />
+    <Compile Include="Quantize\DefaultQuantizer.cs" />
+    <Compile Include="Palette.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transformation\Processors\ResizeBitmapProcessor.cs" />
+    <Compile Include="Transformation\Processors\CropBitmapProcessor.cs" />
+    <Compile Include="Transformation\DefaultGifTransformer.cs" />
+    <Compile Include="Transformation\GifTransformer.cs" />
+    <Compile Include="Transformation\IBitmapProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
